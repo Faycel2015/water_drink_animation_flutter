@@ -18,6 +18,7 @@ dependencies:
   audioplayers: ^0.20.1
   provider: ^6.1.2
   cloud_firestore: ^5.6.1
+  flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
   flutter_test:
@@ -35,4 +36,5 @@ platforms:
   ios:
   web:
   windows:
+  linux:
   macos:
