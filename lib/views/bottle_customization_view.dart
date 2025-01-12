@@ -22,3 +22,5 @@ class BottleCustomizationView extends StatelessWidget {
     );
   }
 }
+
+ColorPicker({required Null Function(dynamic color) onColorChanged}) {}

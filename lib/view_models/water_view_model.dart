@@ -13,7 +13,7 @@ class WaterViewModel extends ChangeNotifier {
     _loadWaterData();
   }
 
-  void updateStreak() {
+  void updateStreak(dynamic viewModel) {
     final lastDate = DateTime.now().subtract(Duration(days: 1));
     if (viewModel.waterData.waterLevel >= 1) {
       _streak++;
