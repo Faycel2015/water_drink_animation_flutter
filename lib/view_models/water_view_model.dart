@@ -13,16 +13,6 @@ class WaterViewModel extends ChangeNotifier {
     _loadWaterData();
   }
 
-  void updateStreak(dynamic viewModel) {
-    final lastDate = DateTime.now().subtract(Duration(days: 1));
-    if (viewModel.waterData.waterLevel >= 1) {
-      _streak++;
-    } else {
-      _streak = 0;
-    }
-    notifyListeners();
-  }
-
   void _loadWaterData() async {
     _waterData = await WaterDataManager.loadWaterData();
     notifyListeners();
@@ -37,6 +27,15 @@ class WaterViewModel extends ChangeNotifier {
   void updateDailyGoal(double goal) {
     _waterData.dailyGoal = goal;
     WaterDataManager.saveWaterData(_waterData);
+    notifyListeners();
+  }
+
+  void updateStreak() {
+    if (_waterData.waterLevel >= 1) {
+      _streak++;
+    } else {
+      _streak = 0;
+    }
     notifyListeners();
   }
 }

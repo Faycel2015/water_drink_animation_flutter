@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:water_drink_animation_flutter/views/water_animation_view.dart';
 import 'view_models/water_view_model.dart';
-import 'views/water_animation_view.dart';
+import 'views/welcome_view.dart';
 
 void main() {
   runApp(
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WaterAnimationView(),
+      home: WelcomeView(),
+      routes: {
+        '/home': (context) => WaterAnimationView(),
+      },
     );
   }
 }

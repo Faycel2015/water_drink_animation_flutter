@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../view_models/water_view_model.dart';
 import '../widgets/wave_painter.dart';
+import '../widgets/celebration_view.dart';
 
 class WaterAnimationView extends StatefulWidget {
-  const WaterAnimationView({super.key});
-
   @override
   _WaterAnimationViewState createState() => _WaterAnimationViewState();
 }
@@ -33,6 +32,17 @@ class _WaterAnimationViewState extends State<WaterAnimationView>
   Widget build(BuildContext context) {
     final viewModel = Provider.of<WaterViewModel>(context);
 
+    if (viewModel.waterData.waterLevel >= 1) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: CelebrationView(),
+          ),
+        );
+      });
+    }
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -51,6 +61,7 @@ class _WaterAnimationViewState extends State<WaterAnimationView>
             ),
             Text(
                 '${(viewModel.waterData.waterLevel * 100).toStringAsFixed(0)}%'),
+            Text('Streak: ${viewModel.streak} days'),
           ],
         ),
       ),
