@@ -4,11 +4,23 @@ import '../utilities/water_data_manager.dart';
 
 class WaterViewModel extends ChangeNotifier {
   WaterData _waterData = WaterData(waterLevel: 0.5, dailyGoal: 2000);
+  int _streak = 0;
 
   WaterData get waterData => _waterData;
+  int get streak => _streak;
 
   WaterViewModel() {
     _loadWaterData();
+  }
+
+  void updateStreak() {
+    final lastDate = DateTime.now().subtract(Duration(days: 1));
+    if (viewModel.waterData.waterLevel >= 1) {
+      _streak++;
+    } else {
+      _streak = 0;
+    }
+    notifyListeners();
   }
 
   void _loadWaterData() async {

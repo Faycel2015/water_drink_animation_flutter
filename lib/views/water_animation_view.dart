@@ -4,6 +4,8 @@ import '../view_models/water_view_model.dart';
 import '../widgets/wave_painter.dart';
 
 class WaterAnimationView extends StatefulWidget {
+  const WaterAnimationView({super.key});
+
   @override
   _WaterAnimationViewState createState() => _WaterAnimationViewState();
 }

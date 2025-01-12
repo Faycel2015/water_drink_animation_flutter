@@ -12,15 +12,15 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+
+@override
+  Builder(context, themeManager, child) {
     return MaterialApp(
       title: 'Water Drink Animation',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+        themeMode: themeManager.themeMode,
       home: WaterAnimationView(),
     );
   }
-}
+  }
