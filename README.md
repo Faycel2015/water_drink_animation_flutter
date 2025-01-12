@@ -1,16 +1,12 @@
-# water_drink_animation_flutter
+# Water Drink Animation (Flutter)
 
-A new Flutter project.
+A Flutter app for animating water drinking progress with a wave effect.
 
-## Getting Started
+## Features
+- Wave animation with adjustable water level.
+- Circular mask for the water effect.
+- Slider to control the water level.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Requirements
+- Flutter 3.x
+- Dart 2.x
