@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class WaterData {
   double waterLevel;
   double dailyGoal;

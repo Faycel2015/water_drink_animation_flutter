@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class UserProfile {
   String name;
   int age;
