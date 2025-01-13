@@ -5,11 +5,14 @@ import '../widgets/wave_painter.dart';
 import '../widgets/celebration_view.dart';
 
 class WaterAnimationView extends StatefulWidget {
+  const WaterAnimationView({super.key}); // Add this line
+
   @override
-  _WaterAnimationViewState createState() => _WaterAnimationViewState();
+  WaterAnimationViewState createState() =>
+      WaterAnimationViewState(); // Rename to public
 }
 
-class _WaterAnimationViewState extends State<WaterAnimationView>
+class WaterAnimationViewState extends State<WaterAnimationView>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 

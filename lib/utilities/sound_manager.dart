@@ -4,7 +4,8 @@ class SoundManager {
   static final AudioPlayer _player = AudioPlayer();
 
   static void playBackgroundMusic() async {
-    await _player.play(AssetSource('sounds/background_music.mp3'));
+    await _player
+        .play(AssetSource('sounds/background_music.mp3')); // Correct usage
   }
 
   static void stopBackgroundMusic() async {

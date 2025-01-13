@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flex_color_picker/flex_color_picker.dart';
 
 class BottleCustomizationView extends StatelessWidget {
+  const BottleCustomizationView({super.key}); // Add this line
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +15,7 @@ class BottleCustomizationView extends StatelessWidget {
           children: [
             Text('Choose Your Bottle Color'),
             ColorPicker(
+              // Rename to lowerCamelCase
               onColorChanged: (color) {
                 // Save selected color
               },
@@ -22,5 +26,3 @@ class BottleCustomizationView extends StatelessWidget {
     );
   }
 }
-
-ColorPicker({required Null Function(dynamic color) onColorChanged}) {}

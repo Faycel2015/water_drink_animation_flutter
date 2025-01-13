@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
 class HistoryView extends StatelessWidget {
-  final List<charts.Series<dynamic, DateTime>> seriesList;
+  const HistoryView({super.key, required this.seriesList}); // Add this line
 
-  HistoryView(this.seriesList);
+  final List<charts.Series<dynamic, DateTime>> seriesList;
 
   @override
   Widget build(BuildContext context) {

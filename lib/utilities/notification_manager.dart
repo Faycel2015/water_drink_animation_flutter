@@ -32,6 +32,8 @@ class NotificationManager {
       'It’s time to drink some water.',
       RepeatInterval.hourly,
       platformChannelSpecifics,
+      androidScheduleMode:
+          AndroidScheduleMode.exactAllowWhileIdle, // Add this line
     );
   }
 }

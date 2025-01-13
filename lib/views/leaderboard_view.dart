@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class LeaderboardView extends StatelessWidget {
+  const LeaderboardView({super.key}); // Add this line
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FunFactView extends StatelessWidget {
+  FunFactView({super.key}); // Add this line
+
   final List<String> facts = [
     'Drinking water helps maintain the balance of body fluids.',
     'Water helps keep your skin looking good.',
