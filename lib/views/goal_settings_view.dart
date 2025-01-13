@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../view_models/water_view_model.dart';
 
 class GoalSettingsView extends StatelessWidget {
-  const GoalSettingsView({Key? key}) : super(key: key); // Add this line
+  const GoalSettingsView({super.key}); // Add this line
 
   @override
   Widget build(BuildContext context) {

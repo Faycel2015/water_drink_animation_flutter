@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../view_models/water_view_model.dart';
 
 class AchievementsView extends StatelessWidget {
+  const AchievementsView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<WaterViewModel>(context);
