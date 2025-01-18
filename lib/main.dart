@@ -14,7 +14,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key}); // Add this line
+  const MyApp({super.key}); // Add const constructor
 
   @override
   Widget build(BuildContext context) {

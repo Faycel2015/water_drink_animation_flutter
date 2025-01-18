@@ -4,7 +4,7 @@ class NotificationManager {
   static final FlutterLocalNotificationsPlugin _notificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  static void scheduleNotifications() async {
+  static void scheduleNotifications({required RepeatInterval interval}) async {
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
 
@@ -30,10 +30,9 @@ class NotificationManager {
       0,
       'Stay Hydrated!',
       'It’s time to drink some water.',
-      RepeatInterval.hourly,
+      interval,
       platformChannelSpecifics,
-      androidScheduleMode:
-          AndroidScheduleMode.exactAllowWhileIdle, // Add this line
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
   }
 }

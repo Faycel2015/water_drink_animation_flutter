@@ -30,5 +30,8 @@ class WavePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
+  bool shouldRepaint(WavePainter oldDelegate) {
+    return oldDelegate.waveOffset != waveOffset ||
+        oldDelegate.waterLevel != waterLevel;
+  }
 }

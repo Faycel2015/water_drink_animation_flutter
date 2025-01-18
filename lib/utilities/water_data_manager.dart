@@ -2,8 +2,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/water_data.dart';
 
 class WaterDataManager {
-  static const String waterDataKey = 'waterData'; // Remove or use this field
-
   static Future<void> saveWaterData(WaterData data) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setDouble('waterLevel', data.waterLevel);

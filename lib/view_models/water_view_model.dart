@@ -14,19 +14,7 @@ class WaterViewModel extends ChangeNotifier {
     _loadWaterData();
   }
 
-  // Add this list
-  final List<Achievement> _achievements = [
-    Achievement(
-        title: 'First Sip', description: 'Log your first water intake.'),
-    Achievement(
-        title: 'Hydration Hero',
-        description: 'Reach your daily goal 7 days in a row.'),
-  ];
-
-  // Add this getter
-  List<Achievement> get achievements => _achievements;
-
-  void _loadWaterData() async {
+  Future<void> _loadWaterData() async {
     _waterData = await WaterDataManager.loadWaterData();
     notifyListeners();
   }
@@ -51,4 +39,14 @@ class WaterViewModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  final List<Achievement> _achievements = [
+    Achievement(
+        title: 'First Sip', description: 'Log your first water intake.'),
+    Achievement(
+        title: 'Hydration Hero',
+        description: 'Reach your daily goal 7 days in a row.'),
+  ];
+
+  List<Achievement> get achievements => _achievements;
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BottleCustomizationView extends StatelessWidget {
-  const BottleCustomizationView({super.key}); // Add this line
+  const BottleCustomizationView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,9 @@ class BottleCustomizationView extends StatelessWidget {
           children: [
             Text('Choose Your Bottle Color'),
             ColorPicker(
-              // Rename to lowerCamelCase
-              onColorChanged: (color) {
-                // Save selected color
+              onColorChanged: (color) async {
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.setInt('bottleColor', color.value);
               },
             ),
           ],
