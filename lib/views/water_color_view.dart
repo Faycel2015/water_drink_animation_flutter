@@ -5,7 +5,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class WaterColorView extends StatelessWidget {
   const WaterColorView({super.key});
 
-  // Method to retrieve the saved water color
   Future<Color> getSavedWaterColor() async {
     final prefs = await SharedPreferences.getInstance();
     final red =
@@ -13,7 +12,6 @@ class WaterColorView extends StatelessWidget {
     final green = prefs.getInt('waterColorGreen') ?? 255;
     final blue = prefs.getInt('waterColorBlue') ?? 255;
     final alpha = prefs.getInt('waterColorAlpha') ?? 255;
-    print('Water color retrieved: R=$red, G=$green, B=$blue, A=$alpha');
     return Color.fromARGB(alpha, red, green, blue);
   }
 
@@ -89,12 +87,12 @@ class WaterColorCustomizationView extends StatelessWidget {
             ColorPicker(
               onColorChanged: (color) async {
                 final prefs = await SharedPreferences.getInstance();
-                await prefs.setInt('waterColorRed', color.red);
-                await prefs.setInt('waterColorGreen', color.green);
-                await prefs.setInt('waterColorBlue', color.blue);
-                await prefs.setInt('waterColorAlpha', color.alpha);
-                print(
-                    'Water color saved: R=${color.red}, G=${color.green}, B=${color.blue}, A=${color.alpha}');
+                await prefs.setInt('waterColorRed', color.r as int); // Use .r
+                await prefs.setInt('waterColorGreen', color.g as int); // Use .g
+                await prefs.setInt('waterColorBlue', color.b as int); // Use .b
+                await prefs.setInt('waterColorAlpha', color.a as int); // Use .a
+                debugPrint(
+                    'Water color saved: R=${color.r}, G=${color.g}, B=${color.b}, A=${color.a}');
               },
             ),
           ],
