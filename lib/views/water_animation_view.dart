@@ -5,11 +5,10 @@ import '../widgets/wave_painter.dart';
 import '../widgets/celebration_view.dart';
 
 class WaterAnimationView extends StatefulWidget {
-  const WaterAnimationView({super.key}); // Add this line
+  const WaterAnimationView({super.key});
 
   @override
-  WaterAnimationViewState createState() =>
-      WaterAnimationViewState(); // Rename to public
+  WaterAnimationViewState createState() => WaterAnimationViewState();
 }
 
 class WaterAnimationViewState extends State<WaterAnimationView>
@@ -47,6 +46,49 @@ class WaterAnimationViewState extends State<WaterAnimationView>
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Water Drink Animation'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              // Open a settings menu or drawer for navigation
+              showModalBottomSheet(
+                context: context,
+                builder: (context) => Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.color_lens),
+                      title: Text('Customize Water Color'),
+                      onTap: () {
+                        Navigator.pop(context); // Close the menu
+                        Navigator.pushNamed(context, '/waterColor');
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.color_lens_outlined),
+                      title: Text('Customize Bottle Color'),
+                      onTap: () {
+                        Navigator.pop(context); // Close the menu
+                        Navigator.pushNamed(context, '/bottleColor');
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.build),
+                      title: Text('Advanced Bottle Customization'),
+                      onTap: () {
+                        Navigator.pop(context); // Close the menu
+                        Navigator.pushNamed(context, '/bottleCustomization');
+                      },
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
